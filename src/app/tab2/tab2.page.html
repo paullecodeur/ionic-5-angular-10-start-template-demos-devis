@@ -9,7 +9,7 @@
 <ion-content>
   <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
   <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
-<ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="false">
+<ion-reorder-group (dragStart)="dragStart()" (ionItemReorder)="doReorder($event)" disabled="false" >
   <!-- Default reorder icon, end aligned items -->
   <!-- <ion-item>
     <ion-label>
@@ -41,57 +41,22 @@
   </ion-item> -->
 
   <!-- Custom reorder icon end items -->
-  <ion-item>
+
+  
+
+  <ion-item *ngFor="let elem of items; let i = index" >
     <ion-label>
-      Item 5
+     item {{elem}}
     </ion-label>
-    <ion-reorder slot="start">
+    <ion-reorder slot="start" >
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
   </ion-item>
 
-  <ion-item>
-    <ion-label>
-      Item 6
-    </ion-label>
-    <ion-reorder slot="start">
-      <ion-icon name="pizza"></ion-icon>
-    </ion-reorder>
-  </ion-item>
-  <ion-item>
-  <ion-label>
-    Item 5
-  </ion-label>
-  <ion-reorder slot="start">
-    <ion-icon name="pizza"></ion-icon>
-  </ion-reorder>
-</ion-item>
+  
+ 
 
-<ion-item>
-  <ion-label>
-    Item 6
-  </ion-label>
-  <ion-reorder slot="start">
-    <ion-icon name="pizza"></ion-icon>
-  </ion-reorder>
-</ion-item>
-<ion-item>
-<ion-label>
-  Item 5
-</ion-label>
-<ion-reorder slot="start">
-  <ion-icon name="pizza"></ion-icon>
-</ion-reorder>
-</ion-item>
 
-<ion-item>
-<ion-label>
-  Item 6
-</ion-label>
-<ion-reorder slot="start">
-  <ion-icon name="pizza"></ion-icon>
-</ion-reorder>
-</ion-item>
 
   <!-- Items wrapped in a reorder, entire item can be dragged -->
   <!-- <ion-reorder>

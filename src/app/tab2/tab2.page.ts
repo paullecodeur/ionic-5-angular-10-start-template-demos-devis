@@ -18,6 +18,9 @@ export class Tab2Page {
   doReorder(ev: CustomEvent<ItemReorderEventDetail>) {
     // Before complete is called with the items they will remain in the
     // order before the drag
+
+    console.log('Dragged from index', ev.detail.from, 'to', ev.detail.to);
+
     console.log('Before complete', this.items);
 
     // Finish the reorder and position the item in the DOM based on
@@ -27,6 +30,10 @@ export class Tab2Page {
 
     // After complete is called the items will be in the new order
     console.log('After complete', this.items);
+  }
+
+  dragStart() {
+    console.log('dragstart');
   }
 
 }
